@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/logo.css">
+    <script src="script/ajax.js"></script>
+    <title>LOGOS</title>
+</head>
+<body>
+    <header th:insert= "~{blocks/header.html}"></header>
+        <div id="main_container">
+            <div id="upload_form">
+                <form id="upload_logo_form" action="/logos/upload" enctype="multipart/form-data" method="post">
+                    <input type="file" name="logo" value="logo">
+                    <input type="submit" value="UPLOAD LOGO">
+                </form>
+           </div>
+           <div th:each="logo : ${logobean}" id="logo_set_form">
+            <form  method="post">
+                <input type="image" th:src="${logo.logoPatch}" width="100" height="100">
+                <input type="hidden" th:value="${logo.id}">
+                <input  th:type="${logo.isSelected} ? 'hidden' : 'submit'" value="delete"  th:formaction="'/logos/delete/'+${logo.id}">
+                <select id="input_services" name="channelName" th:disabled="${logo.isSelected}">
+                    <option th:type="${logo.isSelected} ? 'hidden'" value="">select channel name</option>
+                    <option th:each="input : ${inputService}" th:value="${input.channelName}" th:text="${input.channelName}" th:disabled="${input.isSelected}" ></option>
+                </select>
+                <input th:type="${logo.isSelected} ? 'hidden':'submit'" value="select" th:formaction="'/logos/select/'+${logo.id}">
+            </form>
+        </div> 
+        </div> 
+    <footer th:insert= "~{blocks/footer.html}"></footer>
+    <script src="script/logos.js"></script>
+</body>
+</html>

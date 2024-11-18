@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <script src="script/ajax.js"></script>
+    <title>Content</title>
+</head>
+<body>
+    <header th:insert= "~{blocks/header.html}"></header>
+        <div id="main_container">
+            <div id="upload_form">
+                <form id="upload_video_form" action="/content/upload" enctype="multipart/form-data" method="post">
+                    <input type="file" name="files" value="video">
+                    <input type="submit" value="UPLOAD VIDEO">
+                </form>
+           </div>
+           <div id="video_content"></div>
+        </div> 
+    <footer th:insert= "~{blocks/footer.html}"></footer>
+    <script src="script/content.js"></script>
+</body>
+</html>

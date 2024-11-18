@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <title>user</title>
+</head>
+<body>
+    <body>
+        <header th:insert= "~{blocks/header.html}"></header><br>
+            <div id="main_container">
+                <div class="user_form">
+                    <form th:action="@{/user/add}" method="post">
+                        <input class="submit_user" id="submit_add" type="submit" value="add">
+                        <input type="text" name="name" placeholder="username">
+                        <input type="password"  name="password" placeholder="password">
+                        <input type="password"  name="repassword" placeholder="password">
+                    </form>
+                </div>
+                <div th:each="user : ${users}"  class="user_form">
+                    <form  method="post"  >
+                        <input class="submit_user" id="submit_edit" type="submit" th:formaction="'/user/edit/'+${user.id}"  value="edit">
+                        <input class="submit_user" id="submit_delete" type="submit" th:formaction="'/user/delete/'+${user.id}"  value="delete">
+                        <input type="text" name="name" th:value="${user.username}">
+                        <input type="password"  name="password" th:value="${user.password}">
+                        <input type="password"  name="repassword" th:value="${user.password}">
+                    </form>
+                </div>
+            </div>    
+        <footer th:insert= "~{blocks/footer.html}"></footer>
+    </body>
+</body>
+</html>

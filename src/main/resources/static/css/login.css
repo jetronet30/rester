@@ -1,0 +1,21 @@
+body{
+    background-color: aquamarine;
+}
+.conteiner{
+    
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+    font-size:larger;
+    input{
+        margin: 10px;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+    }
+    #submit{
+        width: 103%;
+    }
+}

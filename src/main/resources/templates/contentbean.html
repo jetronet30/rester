@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <script>
+        $(()=>{
+            $(".video_form").submit(function(e) {
+                e.preventDefault(); // 
+                var form = $(this);
+                    $.ajax({
+                        type: "POST",
+                        url: "/content/delete",
+                        data: form.serialize(), 
+                        success: function(html){
+                           $("#video_content").html(html)
+                        }
+                    });
+                });          
+            });
+          </script>
+    <div th:each = "video : ${conbean}">
+        <form class="video_form" >
+            <video controls  >
+                <source th:src="${video.videoPatch}" type="video/mp4">
+            </video>
+            <input  name="name" th:value="${video.name}" readonly/>
+            <input  type="hidden"name="id" th:value="${video.id}" />
+            <input  th:type="${video.isSelected} ? 'hidden':'submit'" th value="delete"/>  
+        </form>
+    </div> 
+</html>

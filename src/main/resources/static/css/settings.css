@@ -1,0 +1,25 @@
+.settings_form{
+    border-style: dashed;
+    width: 30%;
+    margin-top: 1%;
+    margin-left: 20%;
+    font-size: larger;
+    text-align: center;
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 18px;
+    }
+      
+    input[type=submit] {
+      width: 100%;
+      padding: 14px 20px;
+      margin: 8px 0;
+      font-size: 20px;
+    }
+      
+}

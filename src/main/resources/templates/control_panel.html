@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="script/ajax.js"></script>
+    <title>control panel</title>
+</head>
+<body>
+    <header th:insert= "~{blocks/header.html}"></header>
+        <div id="main_container">
+           <div> 
+                <h2 th:text="${sysname}"></h2>
+                <h2>cpu load :<text id="load_cpu"/></h2>
+                <h2>total memory :<text id="total_memory"/></h2>
+                <h2>used memory :<text id="memory"/></h2>
+                <h2>total space :<text id="total_space"/></h2>
+                <h2>free space :<text id="free_space"/></h2>
+                <h2>connected users :<text id="connect_user"/></h2>
+                <h2>activ stream :<text id="activ_stream"/></h2>
+           </div>
+
+                <button type="button" id="reload">reload</button>
+                <button type="button" id="shut_down">shut down</button> 
+        </div>    
+    <footer th:insert= "~{blocks/footer.html}"></footer>
+    <script src="script/panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <header class="header" >
+        <form>
+            <input type="submit" formaction="/test" value="main">
+            <input type="submit" formaction="/stream" value="stream">
+            <input type="submit" formaction="/activchannels" value="activ channels">
+            <input type="submit" formaction="/content" value="V_content">
+            <input type="submit" formaction="/logos" value="logo">
+            <input type="submit" formaction="/panel" value="control panel">
+            <input type="submit" formaction="/settings" value="settings">
+            <input type="submit" formaction="/user" value="user">
+            <input type="submit" formaction="#" value="contac">
+
+        </form>
+        <form th:action="@{logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </header>
+</html>

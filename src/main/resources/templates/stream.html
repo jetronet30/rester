@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/stream.css">
+    <script src="script/ajax.js"></script>
+    <title>stream</title>
+</head>
+<body>
+    <header th:insert= "~{blocks/header.html}"></header>
+            <div id="main_container">
+                <div id="action_buttons">
+                    <form method="post">
+                        <input type="submit" value="stop all" formaction="/stream/stop_all">
+                        <input type="submit" value="start all" formaction="/stream/start_all">
+                        <input type="submit" value="map channels" formaction="/stream/map_channels">
+                        <input type="submit" value="refresh" formmethod="get" formaction="/stream">
+                    </form>
+                </div> 
+                <div id="stream_add-form">
+                    <form action="/stream/add" method="post">
+                        <select id="video" name="video">
+                            <option hidden value="">select video</option>
+                            <option th:each="video : ${videos}" th:value="${video.name}" th:text="${video.name}"></option>
+                        </select>
+                        <label>OR</label>
+                        <input id="url" type="text" name="out_link" placeholder="select url" >
+                        <input id="name" type="text" name="name" placeholder="name">
+                        <input id="submit" type="submit" value="add stream">
+                    </form>
+                </div> 
+                <div id="streams_form" th:each="stream : ${streams}">
+                    <form method="post">
+                        <input type="text" id="input_url" name="input_url" th:value="${stream.inputUrl}">
+                        <input type="text" id="channel_name" name="channel_name" th:value="${stream.channelName}" readonly>
+                        <input type="text" id="indexer" name="index" th:value="${stream.indexer}">
+                        <input type="submit"  value="set index" th:formaction="'/stream/setindex/'+${stream.id}">
+                        <input type="text" id="activ" name="activ" th:value="${stream.isActiv} ? 'on' : 'off'" readOnly>
+                        <input th:type="${stream.isSelected} ? 'hidden' : 'submit' "  value="select logo" formaction="/logos" formmethod="get">
+                        <input th:type="${stream.isActiv} ? 'hidden' : 'submit' "  value="edit" th:formaction="'/stream/edit/'+${stream.id}">
+                        <input th:type="${stream.isActiv} ? 'hidden' : 'submit' "  value="delet" th:formaction="'/stream/delete/'+${stream.id}">
+                        <input type="submit"  th:value="${stream.isActiv} ? 'stop' : 'start'" th:formaction="${stream.isActiv} ? '/stream/stop/'+${stream.id} : '/stream/start/'+${stream.id}">
+                    </form>
+                </div>    
+            </div>  
+    <footer th:insert= "~{blocks/footer.html}"></footer>
+</body>
+</html>

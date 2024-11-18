@@ -1,0 +1,36 @@
+body{
+    background-color: aquamarine;
+}
+#main_container{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header{
+    margin-left: 5%;
+    margin-top: 10px;
+    width: 95%;
+    form{
+        display: inline;
+    }
+    input{
+        font-size: 14px;
+        height: 40px;
+        margin-left: auto;
+        width: 9%;
+    }
+    input:hover{
+        font-size: 22px;
+        height: 50px;
+        margin-left: auto;
+        width: 10%;
+        background-color: rgb(145, 145, 180);
+    }
+}
+
+footer{
+   width: 95%;
+   text-align: center;
+   position: fixed;
+   bottom: 0;
+}

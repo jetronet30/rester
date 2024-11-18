@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/settings.css">
+    <title>SETTINGS</title>
+</head>
+<body>
+    <body>
+        <header th:insert= "~{blocks/header.html}"></header>
+            <div id="main_container">
+                <div class="settings_form">
+                    <form action="/settings/edit" method="post">
+                        <label>lan settings</label><br>
+                        <label>ip</label>
+                        <input type="text" name="out_ip" th:value="${settings.uotIp}">
+                        <label>gateway</label>
+                        <input type="text" name="gateway" th:value="${settings.gateway}">
+                        <label> dns addresses</label> 
+                        <input type="text" name="dns" th:value="${settings.dns}">
+                        <input type="submit" value="save">
+                        <input type="submit" value="set" formaction="/settings/set">
+                    </form>
+                </div>
+            </div>    
+        <footer th:insert= "~{blocks/footer.html}"></footer>
+    </body>
+</body>
+</html>

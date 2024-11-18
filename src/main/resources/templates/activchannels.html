@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/activchannels.css">
+    <script src="script/ajax.js"></script>
+    <script src="script/hls.js"></script>
+    <title>ACTIV CHANNELS</title>
+</head>
+<body>
+    <header th:insert= "~{blocks/header.html}"></header>
+        <div id="main_container">
+            <div id="activ_container">
+                <div id="video_div">
+                      <video id="video" width="640" height="460" controls >
+                </div>
+                <div id="tv_logo" >
+                   
+                </div>
+            </div>      
+        </div>    
+    <footer th:insert= "~{blocks/footer.html}"></footer>
+    <script src="script/actchan.js"></script>
+</body>
+</html>

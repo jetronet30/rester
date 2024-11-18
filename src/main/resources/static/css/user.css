@@ -1,0 +1,29 @@
+.user_form{
+    width: 70%;
+    margin-left: 15%;
+    padding: 10px;
+    input{
+        font-size: 20px;
+        text-align: center;
+        height: 25;
+        width: 10%;
+        border: none;
+    }
+    .submit_user{
+        width: 7%;
+        border: none;
+    }
+    #submit_add:hover{
+        background-color: rgba(24, 203, 30, 0.5);
+        border: none;
+    }
+    #submit_delete:hover{
+        background-color: rgba(255, 0, 0, 0.700);
+        border: none;
+    }
+    #submit_edit:hover{
+        background-color: rgba(13, 18, 122, 0.500);
+        border: none;
+    }
+    
+}
