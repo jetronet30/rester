@@ -21,12 +21,14 @@ public class WebSecurityConfig {
                 .requestMatchers("/iptv/**",
                                              "/playlist",
                                              "./mainrepo/content/stream/**",
-                                             "/css/**",
+                                             "/css/login.css",
+                                             "actuator/**",
                                              "/logo/**",
+                                             "/images/bacground.jpg",
                                              "/tvmonitor/**",
-                                             "/script/**",
-                                             "/images/**",
-                                             "/css/tvmonitor.css").permitAll()
+                                             "/script/ajax.js",
+                                             "/css/tvmonitor.css",
+                                             "/css/livechannels.css").permitAll()
                 .anyRequest().authenticated()
               )
               .formLogin((form)->form
