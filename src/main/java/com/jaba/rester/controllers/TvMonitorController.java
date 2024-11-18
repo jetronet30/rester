@@ -12,9 +12,9 @@ public class TvMonitorController {
         return "tv/tvmonitor";
     }
     
-    @GetMapping("/tvmonitor/live")
+    @GetMapping("/live")
     public String show_live_channels() {
-        return "tv/livechannels";
+        return "tv/live";
     }
     
 

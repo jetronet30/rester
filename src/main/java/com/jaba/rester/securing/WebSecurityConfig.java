@@ -22,13 +22,14 @@ public class WebSecurityConfig {
                                              "/playlist",
                                              "./mainrepo/content/stream/**",
                                              "/css/login.css",
+                                             "/css/**",
+                                             "/script/**",
                                              "actuator/**",
                                              "/logo/**",
                                              "/images/bacground.jpg",
                                              "/tvmonitor/**",
-                                             "/script/ajax.js",
-                                             "/css/tvmonitor.css",
-                                             "/css/livechannels.css").permitAll()
+                                             "/live/**",
+                                             "/script/ajax.js").permitAll()
                 .anyRequest().authenticated()
               )
               .formLogin((form)->form
